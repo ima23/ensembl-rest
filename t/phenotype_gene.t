@@ -189,7 +189,6 @@ my $gene_name='FOXF2';
             },
             description => 'positive regulation of transcription from RNA polymerase II promoter',
             location => '6:280129-389454',
-            ontology_accessions => [ 'GO:0060023'],
             source => 'GOA'
           }
         ];
