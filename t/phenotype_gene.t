@@ -187,7 +187,7 @@ my $gene_name='FOXF2';
             attributes => {
               external_reference => 'pubmed/17122850'
             },
-            description => 'soft palate development',
+            description => 'positive regulation of transcription from RNA polymerase II promoter',
             location => '6:280129-389454',
             ontology_accessions => [ 'GO:0060023'],
             source => 'GOA'
