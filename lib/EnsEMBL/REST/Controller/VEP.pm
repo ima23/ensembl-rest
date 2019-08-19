@@ -49,6 +49,7 @@ has valid_user_params => (
     failed
     variant_class
     minimal
+    transcript_version
 
     everything
     appris
