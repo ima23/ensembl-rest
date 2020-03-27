@@ -48,11 +48,14 @@ sub fetch_by_accession  {
 
 
   if( $self->context->request->param('include_children') ){
-
-    my $parentterm = $ont_ad->fetch_by_accession($accession );
-    my $childterms = $ont_ad->fetch_all_by_parent_term($parentterm);
-    foreach my $childterm (@{$childterms}){
-      @phenotype_features = (@phenotype_features, @{$self->fetch_features($species, $childterm->accession)}  );
+    try {
+      my $parentterm = $ont_ad->fetch_by_accession($accession );
+      my $childterms = $ont_ad->fetch_all_by_parent_term($parentterm);
+      foreach my $childterm (@{$childterms}){
+        @phenotype_features = (@phenotype_features, @{$self->fetch_features($species, $childterm->accession)}  );
+      }
+    } catch {
+      $c->log()->debug("Fetch from ontology db failed:".$_);
     }
   }
 
